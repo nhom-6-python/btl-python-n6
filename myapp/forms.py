@@ -9,7 +9,7 @@ class TruyenForm(forms.ModelForm):
 class ChapForm(forms.ModelForm):
 	class Meta:
 		model = Chap
-		fields = ["stt", "ten", "luotxem", "thoigiandang", "truyen"]
+		fields = ["stt", "ten", "luotxem", "truyen"]
 
 class TrangForm(forms.ModelForm):
 	class Meta:
@@ -23,5 +23,5 @@ class ThongbaoForm(forms.ModelForm):
 
 class NguoidungForm(forms.ModelForm):
 	class Meta:
-		model = Thongbao
+		model = Nguoidung
 		fields =  ["ten", "matkhau", "vaitro", "yeuthich", "lichsu", "thongbao", "truyendang"]
