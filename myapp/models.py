@@ -8,8 +8,8 @@ class Truyen(models.Model):
 	mota = models.TextField()
 	tacgia = models.CharField(max_length=255)
 	luotthich = models.BigIntegerField(default=0)
-	anhbia = models.FileField(upload_to='anhbia/', blank=True)
-	anhnen = models.FileField(upload_to='anhnen/', blank=True)
+	anhbia = models.FileField(upload_to='anhbia/')
+	anhnen = models.FileField(upload_to='anhnen/')
 	@property
 	def luotxem(self):
 		return sum(x.luotxem for x in self.chap.all())
@@ -20,11 +20,11 @@ class Chap(models.Model):
 	ten = models.CharField(max_length=255)
 	luotxem = models.BigIntegerField(default=0)
 	thoigiandang = models.DateTimeField(auto_now_add=True)
-	truyen = models.ForeignKey(Truyen, on_delete=models.CASCADE, related_name='chap', blank=True, null=True, default=0)
+	truyen = models.ForeignKey(Truyen, on_delete=models.CASCADE, related_name='chap')
 
 class Trang(models.Model):
 	anh = models.FileField(upload_to='anhchap/')
-	chap = models.ForeignKey(Chap, on_delete=models.CASCADE, related_name='chap', blank=True, null=True, default=0)
+	chap = models.ForeignKey(Chap, on_delete=models.CASCADE, related_name='chap')
 
 class Thongbao(models.Model):
 	noidung = models.CharField(max_length=255)
