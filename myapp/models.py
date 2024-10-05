@@ -13,7 +13,9 @@ class Truyen(models.Model):
 	@property
 	def luotxem(self):
 		return sum(x.luotxem for x in self.chap.all())
-	
+	@property
+	def chapmoinhat(self):
+		return self.chap.order_by('-thoigiandang').first()
 	
 class Chap(models.Model):
 	stt = models.FloatField(default=0)
