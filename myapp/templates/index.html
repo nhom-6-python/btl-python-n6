@@ -9,14 +9,36 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{% static 'styles.css' %}">
+	<title>Trang chủ</title>
+	<link rel="stylesheet" href="{% static 'base.css' %}">
+	<link rel="stylesheet" href="{% static 'carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'dangtheodoi.css' %}">
+	<link rel="stylesheet" href="{% static 'doctruyen.css' %}">
+	<link rel="stylesheet" href="{% static 'login.css' %}">
+	<link rel="stylesheet" href="{% static 'reset.css' %}">
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="{% static 'suatruyen.css' %}">
 
-	<title>Document</title>
+	<style>
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		}
+
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
 </head>
 
 <body>
 	{% block content %}
-	{% endblock %}
+	{%endblock %}
 </body>
 
 </html>
