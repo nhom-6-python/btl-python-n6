@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'bootstrap5',
+    'django.contrib.humanize',
     
 ]
 
@@ -105,6 +106,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+LANGUAGES = [
+    ('vi', 'Vietnamese'),
+    ('en-us', 'English (US)'),
+    # Bạn có thể thêm các ngôn ngữ khác nếu cần
+]
 
 LANGUAGE_CODE = 'en-us'
 
