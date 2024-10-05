@@ -1,13 +1,20 @@
 from django.shortcuts import render, redirect
 from .models import Truyen, Chap, Trang, Thongbao, Nguoidung
 from .forms import TruyenForm
+from datetime import datetime, timedelta
+from django.utils.timezone import make_aware
 # Create your views here.
 
-# def sort_by_view_in_month():
-# 	Truyens = Truyen.object.
+def top3_by_like():
+	top3 = Truyen.objects.all().order_by('-luotthich')[:3]
+	return top3
 
 def home(request):
-	return render(request, 'home.html')
+	top3 = top3_by_like()
+	context = {
+		'top3' : top3
+	}
+	return render(request, 'home.html', context)
 
 # def upload(request):
 # 	if request.method == 'POST':

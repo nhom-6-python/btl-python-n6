@@ -112,7 +112,8 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      {% for x in top3 %}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
           preserveAspectRatio="xMidYMid slice" focusable="false">
           <defs>
@@ -127,7 +128,7 @@
           <div class="carousel-caption text-start">
             <div class="container">
               <div class="c-item">
-                <div class="inner-image" style="background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000), url(assets/images/1.jpg);
+                <div class="inner-image" style="background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000), url('{{x.anhnen.url}}');
                                   background-size: cover; --tw-brightness :brightness(.75);background-position: top; border-radius: .5rem;
                                   background-repeat: no-repeat; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);position: relative;
                                   background-origin:content-box; top: 30px; filter: brightness(0.75);
@@ -135,13 +136,9 @@
                   <div class="text-end">
                     <div class="inner-text">
 
-                      <h5>Anh hùng không thể tiếp tục hành trình
+                      <h5>{{x.ten}}
                       </h5>
-                      <p class="inner-desc"> Câu chuyện kể về nhóc anh hùng và chị thánh nữ.
-                        Anh hùng luôn muốn đánh
-                        thắng được thánh nữ để có thể tiếp tục cuộc hành trình thảo phạt Quỷ
-                        Vương. Oneshot ko có phần
-                        tiếp theo </p>
+                      <p class="inner-desc"> {{x.mota}} </p>
 
                     </div>
                     <div class="text-button">
@@ -155,7 +152,8 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item">
+      {% endfor %}
+      <!-- <div class="carousel-item">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
           preserveAspectRatio="xMidYMid slice" focusable="false">
           <rect width="100%" height="70%" fill="#e1eeff" />
@@ -225,7 +223,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -238,7 +236,7 @@
   </div>
 
   <!-- MỚI CẬP NHẬT -->
-  <section id="new-update">
+  <!-- <section id="new-update">
     <div class="container">
       <div class="inner-title font-bold">
         mới cập nhật
@@ -527,7 +525,7 @@
         <span>Xem danh sách truyện</span>
       </a>
     </div>
-  </section>
+  </section> -->
 
   <!-- END MỚI CẬP NHẬT -->
 
@@ -1304,11 +1302,7 @@
       </div>
     </div>
   </section>
-  <!-- END NHÓM DỊCH -->
-
-
-
-
+  END NHÓM DỊCH
 
   <!-- FOOTER -->
   <footer class="footer">

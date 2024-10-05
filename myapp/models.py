@@ -21,6 +21,8 @@ class Chap(models.Model):
 	luotxem = models.BigIntegerField(default=0)
 	thoigiandang = models.DateTimeField(auto_now_add=True)
 	truyen = models.ForeignKey(Truyen, on_delete=models.CASCADE, related_name='chap')
+	def formatted_time(self):
+		return self.thoigiandang.strftime('%d/%m/%Y %H:%M')	
 
 class Trang(models.Model):
 	anh = models.FileField(upload_to='anhchap/')
