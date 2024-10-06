@@ -284,54 +284,24 @@
         <div class="col-12">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <form method="post" style="display: inline;">
-                {% csrf_token %}
-                {% if tuan_active == True %}
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                  type="submit" role="tab" aria-controls="pills-home" aria-selected="true" name="tuan_btn">Tuần</button>
-                {% else %}
-                <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                  type="submit" role="tab" aria-controls="pills-home" aria-selected="true" name="tuan_btn">Tuần</button>
-                {% endif %}
-              </form>
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
             </li>
             <li class="nav-item" role="presentation">
-              <form method="post" style="display: inline;">
-                {% csrf_token %}
-                {% if thang_active == True %}
-                <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-profile" type="submit" role="tab" aria-controls="pills-profile"
-                  aria-selected="false" name="thang_btn">Tháng</button>
-                {% else %}
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                  type="submit" role="tab" aria-controls="pills-profile" aria-selected="false"
-                  name="thang_btn">Tháng</button>
-                {% endif %}
-              </form>
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
             </li>
             <li class="nav-item" role="presentation">
-              <form method="post" style="display: inline;">
-                {% csrf_token %}
-                {% if moiluc_active == True %}
-                <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-contact" type="submit" role="tab" aria-controls="pills-contact"
-                  aria-selected="false" name="moiluc_btn">Mọi
-                  lúc</button>
-                {% else %}
-                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                  type="submit" role="tab" aria-controls="pills-contact" aria-selected="false" name="moiluc_btn">Mọi
-                  lúc</button>
-                {% endif %}
-              </form>
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
-
+            <!-- theo tuần -->
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
               <div class="container-snap">
-                <div class="row">
-                  <!-- 1 -->
-                  {% for x in list_top_view_row1 %}
+                <div class="row" style="flex-wrap: wrap;">
+                  {% for x in list_top_view_tuan %}
                   <div class="col">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
@@ -341,18 +311,21 @@
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} views</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
-                      {{ forloop.counter }}
+                      0{{forloop.counter}}
                     </div>
                   </div>
                   {% endfor %}
-
                 </div>
-
-                <div class="row">
-                  {% for x in list_top_view_row2 %}
+              </div>
+            </div>
+            <!-- theo tháng -->
+            <div class="tab-pane fade show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container-snap">
+                <div class="row" style="flex-wrap: wrap;">
+                  {% for x in list_top_view_thang %}
                   <div class="col">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
@@ -362,45 +335,44 @@
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} views</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
-                      {{ forloop.counter|add:3 }}
+                      0{{forloop.counter}}
                     </div>
                   </div>
                   {% endfor %}
                 </div>
-
-                <div class="row">
-                  <!-- 1 -->
-                  {% for x in list_top_view_row3 %}
+              </div>
+            </div>
+            <!-- theo mọi lúc -->
+            <div class="tab-pane fade show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="container-snap">
+                <div class="row" style="flex-wrap: wrap;">
+                  {% for x in list_top_view_moiluc %}
                   <div class="col">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
                       <a href="#" style="color: black;">
-                        <h3>{{x.ten}}</h3>
+                        <h3>{{x.ten}} </h3>
                       </a>
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} views</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
-                      {{ forloop.counter|add:6 }}
+                      0{{forloop.counter}}
                     </div>
                   </div>
                   {% endfor %}
-
                 </div>
-              </div>
-              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">asasa
-              </div>
-              <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
   <!-- END TRUYỆN NỔI BẬT -->
 
@@ -416,284 +388,86 @@
         <div class="col-12">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              {% if tuan_active == True %}
               <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home-1"
                 type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
-              {% else %}
-              <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home-1"
-                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
-              {% endif %}
             </li>
             <li class="nav-item" role="presentation">
-              {% if thang_active == True %}
-              <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-profile-1" type="button" role="tab" aria-controls="pills-profile"
-                aria-selected="false">Tháng</button>
-              {% else %}
               <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile-1"
                 type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
-              {% endif %}
             </li>
             <li class="nav-item" role="presentation">
-              {% if moiluc_active == True %}
-              <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill"
-                data-bs-target="#pills-contact-1" type="button" role="tab" aria-controls="pills-contact"
-                aria-selected="false">Mọi lúc</button>
-              {% else %}
               <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact-1"
                 type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
-              {% endif %}
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home-1" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="tab-pane fade show active" id="pills-profile-1" role="tabpanel"
+              aria-labelledby="pills-profile-tab">
               <div class="container">
                 <div class="inner-list">
+                  {% for x in list_top_nhomdich_tuan %}
                   <div class="inner-content">
                     <div class="inner-icon">
-                      S
+                      ND
                     </div>
                     <div class="inner-desc">
                       <a href="">
-                        Shyobz
+                        {{x.ten}}
                       </a>
-                      <div>100 truyện đã đăng</div>
-                      <div>202.8K lượt xem</div>
+                      <div>92 truyện đã đăng</div>
+                      <div>{{x.total_views}}</div>
                     </div>
                     <div class="inner-stt">
-                      01
+                      0{{ forloop.counter }}
                     </div>
                   </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      M
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        MangaSoge
-                      </a>
-                      <div>32 truyện đã đăng
-                      </div>
-                      <div>90.9K lượt xem
-                      </div>
-                    </div>
-                    <div class="inner-stt">
-                      02
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      C
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Chú Thuật sư hội
-
-                      </a>
-                      <div>8 truyện đã đăng</div>
-                      <div>78.3K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      03
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      S
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Starry Whale
-                      </a>
-                      <div>2 truyện đã đăng</div>
-                      <div>38.9K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      04
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      S
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Ăng Béo Cặm Bẫy
-                      </a>
-                      <div>12 truyện đã đăng</div>
-                      <div>21.8K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      05
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="pills-profile-1" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="tab-pane fade show" id="pills-profile-1" role="tabpanel" aria-labelledby="pills-profile-tab">
               <div class="container">
                 <div class="inner-list">
+                  {% for x in list_top_nhomdich_thang %}
                   <div class="inner-content">
                     <div class="inner-icon">
-                      S
+                      ND
                     </div>
                     <div class="inner-desc">
                       <a href="">
-                        Shyobz
+                        {{x.ten}}
                       </a>
                       <div>92 truyện đã đăng</div>
-                      <div>923.7K lượt xem</div>
+                      <div>{{x.total_views}}</div>
                     </div>
                     <div class="inner-stt">
-                      01
+                      0{{ forloop.counter }}
                     </div>
                   </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      C
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Chú Thuật sư hội
-
-                      </a>
-                      <div>8 truyện đã đăng</div>
-                      <div>285.7K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      02
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      M
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        MangaSoge
-
-                      </a>
-                      <div>32 truyện đã đăng</div>
-                      <div>270.6K lượt xem
-                      </div>
-                    </div>
-                    <div class="inner-stt">
-                      03
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      S
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Starry Whale
-                      </a>
-                      <div>2 truyện đã đăng</div>
-                      <div>136.8K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      04
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      G
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Gia Hào
-                      </a>
-                      <div>13 truyện đã đăng</div>
-                      <div>126.8K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      05
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-            <div class="tab-pane fade" id="pills-contact-1" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="tab-pane fade show" id="pills-profile-1" role="tabpanel" aria-labelledby="pills-profile-tab">
               <div class="container">
                 <div class="inner-list">
+                  {% for x in list_top_nhomdich_moiluc %}
                   <div class="inner-content">
                     <div class="inner-icon">
-                      S
+                      ND
                     </div>
                     <div class="inner-desc">
                       <a href="">
-                        Shyobz
+                        {{x.ten}}
                       </a>
                       <div>92 truyện đã đăng</div>
-                      <div>52.4M lượt xem</div>
+                      <div>{{x.total_views}}</div>
                     </div>
                     <div class="inner-stt">
-                      01
+                      0{{ forloop.counter }}
                     </div>
                   </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      C
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Chú Thuật sư hội
-                      </a>
-                      <div>92 truyện đã đăng</div>
-                      <div>202.8K lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      02
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      M
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        My Hero Academia VN Fanpage
-                      </a>
-                      <div>1 truyện đã đăng</div>
-                      <div>6.9M lượt xem
-                      </div>
-                    </div>
-                    <div class="inner-stt">
-                      03
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      E
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        Eishun Team
-                      </a>
-                      <div>9 truyện đã đăng</div>
-                      <div>5.8M lượt xem
-                      </div>
-                    </div>
-                    <div class="inner-stt">
-                      04
-                    </div>
-                  </div>
-                  <div class="inner-content">
-                    <div class="inner-icon">
-                      S
-                    </div>
-                    <div class="inner-desc">
-                      <a href="">
-                        MangaSoge
-                      </a>
-                      <div>32 truyện đã đăng</div>
-                      <div>3.4M lượt xem</div>
-                    </div>
-                    <div class="inner-stt">
-                      05
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -702,7 +476,7 @@
       </div>
     </div>
   </section>
-  END NHÓM DỊCH
+  <!-- END NHÓM DỊCH -->
 
   <!-- FOOTER -->
   <footer class="footer">

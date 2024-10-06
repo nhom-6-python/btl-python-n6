@@ -49,49 +49,55 @@ def top_view(time): # lọc ra truyện nhiều view nhất trong tuần/tháng/
 		)
 		return top_view
 
+def top_nhomdich(time):
+	if time == 'tuan': # lọc theo tuần
+		today = datetime.today()
+		start_of_week = today - timedelta(days=today.weekday())
+		end_of_week = start_of_week + timedelta(days=6)
+		top_nhomdich = (
+			Nguoidung.objects.filter(vaitro='nhomdich')
+			.annotate(total_views=Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__gte=start_of_week) & Q(truyendang__chap__thoigiandang__lte=end_of_week)))
+			.order_by('-total_views')[:5]  # Lấy 5 người dùng có lượt xem cao nhất
+		)
+		return top_nhomdich
+	elif time == 'thang': # lọc theo tháng
+		this_month = datetime.today().month
+		top_nhomdich = (
+			Nguoidung.objects.filter(vaitro='nhomdich')
+			.annotate(total_views=Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__month=this_month)))
+			.order_by('-total_views')[:5] # Lấy 9 truyện có lượt xem cao nhất trong tháng
+		)
+		return top_nhomdich
+	elif time == 'moiluc':
+		top_nhomdich = (
+			Nguoidung.objects.filter(vaitro='nhomdich')
+			.annotate(total_views=Sum('truyendang__chap__luotxem'))
+			.order_by('-total_views')[:5]
+		)
+		return top_nhomdich
+
 def home(request): # view trang home
 	top3 = top3_by_like()
 	list_new_update = new_update()
 	list_top_view = list()
-	tuan_active = False
-	thang_active = False
-	moiluc_active = False
-	if request.method == 'POST':
-		if 'tuan_btn' in request.POST:
-			list_top_view = top_view("tuan")
-			tuan_active = True
-		elif 'thang_btn' in request.POST:
-			list_top_view = top_view("thang")
-			thang_active = True
-		elif 'moiluc_btn' in request.POST:
-			list_top_view = top_view("moiluc")
-			moiluc_active = True
-	else:
-		list_top_view = top_view("tuan")
-		tuan_active=True
-	cnt = 0
-	list_top_view_row1 = list()
-	list_top_view_row2 = list()
-	list_top_view_row3 = list()
-
-	for x in list_top_view:
-		if cnt <=2:
-			list_top_view_row1.append(x)
-		elif cnt <=5:
-			list_top_view_row2.append(x)
-		else:
-			list_top_view_row3.append(x)
-		cnt+=1
+	list_top_nhomdich = list()
+	list_top_view_tuan = top_view('tuan')
+	list_top_view_thang = top_view('thang')
+	list_top_view_moiluc = top_view('moiluc')
+	list_top_nhomdich_tuan = top_nhomdich('tuan')
+	list_top_nhomdich_thang = top_nhomdich('thang')
+	list_top_nhomdich_moiluc = top_nhomdich('moiluc')
 	context = {
 		'top3' : top3,
 		'list_new_update': list_new_update,
 		'list_top_view': list_top_view,
-		'list_top_view_row1': list_top_view_row1,
-		'list_top_view_row2': list_top_view_row2,
-		'list_top_view_row3': list_top_view_row3,
-		'tuan_active': tuan_active,
-		'thang_active': thang_active,
-		'moiluc_active': moiluc_active,
+		'list_top_nhomdich': list_top_nhomdich,
+		'list_top_view_tuan' : list_top_view_tuan,
+		'list_top_view_thang' : list_top_view_thang,
+		'list_top_view_moiluc' : list_top_view_moiluc,
+		'list_top_nhomdich_tuan' : list_top_nhomdich_tuan,
+		'list_top_nhomdich_thang' : list_top_nhomdich_thang,
+		'list_top_nhomdich_moiluc' : list_top_nhomdich_moiluc,
 	}
 	return render(request, 'home.html', context)
 
