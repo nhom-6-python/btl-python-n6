@@ -42,5 +42,11 @@ class Nguoidung(models.Model):
 	thongbao = models.ManyToManyField(Thongbao, related_name='thongbao', blank=True)
 	truyendang = models.ManyToManyField(Truyen, related_name='truyendang', blank=True)
 	@property
+	def sotruyendadang(self):
+		cnt = 0
+		for x in self.truyendang.all():
+			cnt+=1
+		return cnt
+	@property
 	def luotxem(self):
 		return sum(x.luotxem for x in self.truyendang.all())

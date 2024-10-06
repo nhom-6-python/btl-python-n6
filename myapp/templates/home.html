@@ -247,7 +247,7 @@
         <div class="row">
           {% for x in list_new_update %}
           <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
+            <a href="/truyen/{{x.id}}/">
               <img src="{{x.anhbia.url}}" alt="{{x.ten}}" loading="lazy" width="320" height="480">
             </a>
             <div class="inner-name">
@@ -311,7 +311,7 @@
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
                       0{{forloop.counter}}
@@ -335,7 +335,7 @@
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
                       0{{forloop.counter}}
@@ -359,7 +359,7 @@
                       <a href="#">
                         <span>Chương {{x.chapmoinhat.stt}}</span>
                       </a>
-                      <div class="inner-text" style="margin: 0;">{{x.total_views}} LƯỢT XEM</div>
+                      <div class="inner-text" style="margin: 0;">{{x.total_views|intcomma}} LƯỢT XEM</div>
                     </div>
                     <div class="inner-stt">
                       0{{forloop.counter}}
@@ -414,8 +414,8 @@
                       <a href="">
                         {{x.ten}}
                       </a>
-                      <div>92 truyện đã đăng</div>
-                      <div>{{x.total_views}}</div>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
                     </div>
                     <div class="inner-stt">
                       0{{ forloop.counter }}
@@ -437,8 +437,8 @@
                       <a href="">
                         {{x.ten}}
                       </a>
-                      <div>92 truyện đã đăng</div>
-                      <div>{{x.total_views}}</div>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
                     </div>
                     <div class="inner-stt">
                       0{{ forloop.counter }}
@@ -460,8 +460,8 @@
                       <a href="">
                         {{x.ten}}
                       </a>
-                      <div>92 truyện đã đăng</div>
-                      <div>{{x.total_views}}</div>
+                      <div>{{x.sotruyendadang}} truyện đã đăng</div>
+                      <div>{{x.total_views|intcomma}} Lượt xem</div>
                     </div>
                     <div class="inner-stt">
                       0{{ forloop.counter }}

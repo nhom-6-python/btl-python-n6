@@ -5,5 +5,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('home/', views1.home, name='home')
+    path('home/', views1.home, name='home'),
+    path('truyen/<int:id>/', views1.doctruyen, name='doctruyen')
 ]
