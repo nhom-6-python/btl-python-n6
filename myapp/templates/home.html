@@ -118,13 +118,8 @@
       <div class="carousel-item {% if forloop.first %}active{% endif %}">
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
           preserveAspectRatio="xMidYMid slice" focusable="false">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:rgb(213, 213, 222);stop-opacity:1" />
-              <stop offset="100%" style="stop-color:rgb(167, 168, 171);stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <rect width="100%" height="75%" fill="url(#grad1)" />
+
+          <rect width="100%" height="75%" fill="#b2cfff" />
         </svg>
         <div class="container">
           <div class="carousel-caption text-start">
@@ -155,77 +150,6 @@
         </div>
       </div>
       {% endfor %}
-      <!-- <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="70%" fill="#e1eeff" />
-        </svg>
-
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <div class="container">
-
-              <div class="c-item">
-                <div class="inner-image" style="background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000), url(assets/images/2.jpg);
-                                  background-size: cover; --tw-brightness :brightness(.75);background-position: top; border-radius: .5rem;
-                                  background-repeat: no-repeat; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);position: relative;
-                                  background-origin:content-box; top: 30px; filter: brightness(0.75);
-                                  ">
-                  <div class="text-end">
-                    <div class="inner-text">
-
-                      <h5> Dandadan
-                      </h5>
-                      <p class="inner-desc"> Câu chuyện hài hước và kì bí xen lẫn những yếu tố
-                        kì dị. </p>
-
-                    </div>
-                    <div class="text-button">
-                      <a class="btn btn-lg btn-primary" href="#">Xem thông tin</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-          preserveAspectRatio="xMidYMid slice" focusable="false">
-          <rect width="100%" height="70%" fill="#e1eeff" />
-        </svg>
-
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <div class="container">
-              <div class="c-item">
-                <div class="inner-image" style="background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000), url(assets/images/3.jpg);
-                                  background-size: cover; --tw-brightness :brightness(.75);background-position: top; border-radius: .5rem;
-                                  background-repeat: no-repeat; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);position: relative;
-                                  background-origin:content-box; top: 30px; filter: brightness(0.75);
-                                  ">
-                  <div class="text-end">
-                    <div class="inner-text">
-
-                      <h5>NO \ NAME
-                      </h5>
-                      <p class="inner-desc"> Trong một thế giới mà cái tên mang lại cho mỗi cá
-                        nhân một sức mạnh siêu
-                        phàm. </p>
-
-                    </div>
-                    <div class="text-button">
-                      <a class="btn btn-lg btn-primary" href="#">Xem thông tin</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -300,9 +224,9 @@
             <!-- theo tuần -->
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
               <div class="container-snap">
-                <div class="row" style="flex-wrap: wrap;">
+                <div class="row">
                   {% for x in list_top_view_tuan %}
-                  <div class="col">
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
                       <a href="#" style="color: black;">
@@ -324,9 +248,9 @@
             <!-- theo tháng -->
             <div class="tab-pane fade show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
               <div class="container-snap">
-                <div class="row" style="flex-wrap: wrap;">
+                <div class="row">
                   {% for x in list_top_view_thang %}
-                  <div class="col">
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
                       <a href="#" style="color: black;">
@@ -350,7 +274,7 @@
               <div class="container-snap">
                 <div class="row" style="flex-wrap: wrap;">
                   {% for x in list_top_view_moiluc %}
-                  <div class="col">
+                  <div class="col-lg-4 col-md-4 col-sm-6 col-md-6 col-12">
                     <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
                     <div class="inner-content">
                       <a href="#" style="color: black;">

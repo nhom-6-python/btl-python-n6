@@ -1,94 +1,15 @@
-/* NAV */
-.navbar-brand{
-  color: black;
-}
-.navbar-toggler{
-  color: #0000007d;
-
-}
-.navbar-toggler i{
-  font-size: 20px;
-}
-.dropdown-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dropdown-menu li .dropdown-item {
-  color: gray;
-  font-size: 1em;
-  padding: 0.5em 1em;
-}
-
-.dropdown-menu {
-  border: none;
-  border-radius: 0;
-  padding: 0.7em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-
-
-.dropdown-menu.show {
-  display: flex;
-}
-.navbar-nav .dropdown-menu{
-  overflow: auto;
-}
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .dropdown-menu {
-      position: absolute;
-      width: 800px;
-  }
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .dropdown:hover .dropdown-menu {
-    display: flex;
-  }
-  .dropdown-menu.show {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .dropdown-menu.show {
-    flex-wrap: wrap;
-    max-height: 350px;
-    overflow-y: scroll;
-  }
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1140px) {
-  .dropdown:hover .dropdown-menu {
-    width: 40vw;
-    flex-wrap: wrap;
-  }
-}
-@media (min-width: 992px) {
-  .dropdown:hover .dropdown-menu {
-      position: absolute;
-      width: 800px;
-  }
-}
 /* thong bao */
 
 /* end thong bao */
-
 
 
 /* SEARCH */
 .d-flex {
   height: 2rem;
   align-items: center;
+  margin: 0;
 }
+
 .d-flex .inner-button {
   width: 30px;
   height: 30px;
@@ -123,6 +44,7 @@
   font-size: 10px;
 
 }
+
 /* END SEARCH */
 
 
@@ -136,7 +58,6 @@
 .fa-solid {
   font-size: 0.8rem;
 }
-
 
 .c-item {
   height: 420px;
@@ -309,6 +230,7 @@
 }
 
 /* END CAROUSEL */
+
 /* new update */
 
 #new-update {
@@ -329,7 +251,7 @@
 
 #new-update a img {
   width: 100%;
-  height: auto;
+  height: 80%;
   border-radius: 8px;
 }
 
@@ -356,6 +278,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 #new-update .inner-name .inner-chap {
   margin: 0;
   font-size: 0.8rem;
@@ -364,7 +287,7 @@
   color: rgb(31 41 55 / var(--tw-text-opacity));
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   /* Số dòng hiển thị */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -473,10 +396,10 @@
 
 #best-mangas .row {
   display: flex;
-  flex-wrap: nowrap;
+  justify-content: center;
 }
 
-#best-mangas .col {
+#best-mangas .col-lg-4 {
 
   display: flex;
   align-items: center;
@@ -484,17 +407,19 @@
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
   margin: 15px;
-  width: 400px;
-  height: 85%;
+  /* width: 400px;
+  height: 85%; */
 
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-radius: .5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+
+  width: fit-content;
 }
 
-.col img {
+.col-lg-4 img {
   border-radius: .5rem;
   height: 85%;
   width: 4rem;
@@ -504,17 +429,14 @@
 .container-snap {
   margin-left: auto;
   margin-right: auto;
-  overflow-x: auto;
+
   margin-top: 80px;
 }
 
-.container-snap::-webkit-scrollbar {
-  width: 0;
-}
-
-.col .inner-content {
+.col-lg-4 .inner-content {
   margin-left: 15px;
   margin-right: 45px;
+  width: 14rem;
 }
 
 .inner-stt {
@@ -527,13 +449,13 @@
   margin-right: 4px;
 }
 
-.col .inner-content a span {
+.col-lg-4 .inner-content a span {
   color: var(--color-text);
   text-transform: uppercase;
   font-weight: 600;
 }
 
-.col .inner-content a h3 {
+.col-lg-4 .inner-content a h3 {
   font-size: 20px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -541,7 +463,7 @@
   font-weight: 800;
 }
 
-#best-mangas .col:hover {
+#best-mangas .col-lg-4:hover {
   background-color: #fff;
 }
 
