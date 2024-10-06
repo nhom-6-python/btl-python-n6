@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Truyen(models.Model):
@@ -44,3 +45,9 @@ class Nguoidung(models.Model):
 	@property
 	def luotxem(self):
 		return sum(x.luotxem for x in self.truyendang.all())
+
+#Change form register django
+class CreateUserForm(UserCreationForm):
+	class Meta:
+		model = User
+		fields = ['username', 'email', 'password1', 'password2']
