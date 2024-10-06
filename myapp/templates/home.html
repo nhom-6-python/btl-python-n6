@@ -1,6 +1,7 @@
 {% extends "index.html" %}
 {% block content %}
 {% load humanize %}
+
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
     <div class="container">
@@ -256,287 +257,12 @@
               </a>
               <a href="">
                 <h3 class="inner-chap">
-                  C.{{x.chapmoinhat.stt}}: {{x.chapmoinhat.thoigiandang|naturalday}}
+                  C.{{x.chapmoinhat.stt}}: {{x.chapmoinhat.thoigiandang|naturaltime}}
                 </h3>
               </a>
             </div>
           </div>
           {% endfor %}
-          <!-- <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/centuria.jpg" alt="Centuria" loading="lazy" width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Centuria
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 22
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/noname.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>NO \ NAME
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 005
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/anh-hung-chap-va.jpg" alt="Anh hùng chắp vá" loading="lazy" width="320"
-                height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Anh hùng chắp vá
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 6
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/dandaman.jpg" alt="Dandaman" loading="lazy" width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Dandaman
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 165
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/vo-toi-co-chut-dang-so.jpg" alt="Vợ tôi có chút đáng sợ" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Vợ tôi có chút đáng sợ
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 165
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/anh-hung-khong-the-tiep-tuc-cuoc-hanh-trinh.jpg"
-                alt="Anh hùng không thể tiếp tục cuộc hành trình" loading="lazy" width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Anh hùng không thể tiếp tục cuộc hành trình
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. ONE SHOT
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/worth-an-ban-moi.jpg" alt="Worth ấn bản mới" loading="lazy" width="320"
-                height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>WORTH Ấn Bản Mới
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 34
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img src="assets/images/kamen-rider-spirit.jpg" alt="Kamen rider spirit" loading="lazy" width="320"
-                height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Kamen Rider Spirit
-                </h3>
-              </a>
-              <a href="">
-                <h3 class="inner-chap">
-                  C. 39
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-3 col-4">
-            <a href="#">
-              <img
-                src="https://storage-ct.lrclib.net/file/cuutruyen/uploads/manga/2190/cover/processed-e4b0ec43e61e3f73f27b956efb39abf5.jpg"
-                alt="Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken" loading="lazy"
-                width="320" height="480">
-            </a>
-            <div class="inner-name">
-              <a href="#">
-                <h3>Netorare Manga no Kuzu Otoko ni Tensei Shita Hazu ga Heroine ga Yottekuru Ken
-                </h3>
-              </a>
-            </div>
-          </div> -->
         </div>
       </div>
       <a href="#" class="inner-nextpage">
@@ -558,16 +284,45 @@
         <div class="col-12">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
+              <form method="post" style="display: inline;">
+                {% csrf_token %}
+                {% if tuan_active == True %}
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                  type="submit" role="tab" aria-controls="pills-home" aria-selected="true" name="tuan_btn">Tuần</button>
+                {% else %}
+                <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                  type="submit" role="tab" aria-controls="pills-home" aria-selected="true" name="tuan_btn">Tuần</button>
+                {% endif %}
+              </form>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
+              <form method="post" style="display: inline;">
+                {% csrf_token %}
+                {% if thang_active == True %}
+                <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-profile" type="submit" role="tab" aria-controls="pills-profile"
+                  aria-selected="false" name="thang_btn">Tháng</button>
+                {% else %}
+                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                  type="submit" role="tab" aria-controls="pills-profile" aria-selected="false"
+                  name="thang_btn">Tháng</button>
+                {% endif %}
+              </form>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
+              <form method="post" style="display: inline;">
+                {% csrf_token %}
+                {% if moiluc_active == True %}
+                <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-contact" type="submit" role="tab" aria-controls="pills-contact"
+                  aria-selected="false" name="moiluc_btn">Mọi
+                  lúc</button>
+                {% else %}
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                  type="submit" role="tab" aria-controls="pills-contact" aria-selected="false" name="moiluc_btn">Mọi
+                  lúc</button>
+                {% endif %}
+              </form>
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -661,16 +416,33 @@
         <div class="col-12">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
+              {% if tuan_active == True %}
               <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home-1"
                 type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
+              {% else %}
+              <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home-1"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tuần</button>
+              {% endif %}
             </li>
             <li class="nav-item" role="presentation">
+              {% if thang_active == True %}
+              <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-profile-1" type="button" role="tab" aria-controls="pills-profile"
+                aria-selected="false">Tháng</button>
+              {% else %}
               <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile-1"
                 type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tháng</button>
+              {% endif %}
             </li>
             <li class="nav-item" role="presentation">
+              {% if moiluc_active == True %}
+              <button class="nav-link active" id="pills-contact-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-contact-1" type="button" role="tab" aria-controls="pills-contact"
+                aria-selected="false">Mọi lúc</button>
+              {% else %}
               <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact-1"
                 type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Mọi lúc</button>
+              {% endif %}
             </li>
           </ul>
           <div class="tab-content" id="pills-tabContent">
@@ -954,4 +726,16 @@
   </footer>
   <!-- END FOOTER -->
 </main>
+<!-- giữ nguyên vị trí cuộn -->
+<script>
+  window.onbeforeunload = function () {
+    localStorage.setItem('scrollPosition', window.scrollY);  // Lưu vị trí cuộn vào localStorage
+  };
+
+  window.onload = function () {
+    if (localStorage.getItem('scrollPosition') !== null) {
+      window.scrollTo(0, localStorage.getItem('scrollPosition'));  // Cuộn lại vị trí đã lưu
+    }
+  };
+</script>
 {% endblock %}

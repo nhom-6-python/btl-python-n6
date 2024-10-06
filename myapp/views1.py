@@ -23,21 +23,52 @@ def new_update():
 	return new_update
 
 def top_view(time): # lọc ra truyện nhiều view nhất trong tuần/tháng/all
-	if time == 'tuan':
+	if time == 'tuan': # lọc theo tuần
 		today = datetime.today()
 		start_of_week = today - timedelta(days=today.weekday())
 		end_of_week = start_of_week + timedelta(days=6)
 		top_view = (
 			Truyen.objects
 			.annotate(total_views=Sum('chap__luotxem', filter=Q(chap__thoigiandang__gte=start_of_week) & Q(chap__thoigiandang__lte=end_of_week)))
-			.order_by('-total_views')[:10]  # Lấy 9 truyện có lượt xem cao nhất
+			.order_by('-total_views')[:10]  # Lấy 9 truyện có lượt xem cao nhất trong tuần
+		)
+		return top_view
+	elif time == 'thang': # lọc theo tháng
+		this_month = datetime.today().month
+		top_view = (
+			Truyen.objects
+			.annotate(total_views=Sum('chap__luotxem', filter=Q(chap__thoigiandang__month=this_month)))
+			.order_by('-total_views')[:10] # Lấy 9 truyện có lượt xem cao nhất trong tháng
+		)
+		return top_view
+	elif time == 'moiluc':
+		top_view = (
+			Truyen.objects
+			.annotate(total_views=Sum('chap__luotxem'))
+			.order_by('-total_views')[:10]
 		)
 		return top_view
 
 def home(request): # view trang home
 	top3 = top3_by_like()
 	list_new_update = new_update()
-	list_top_view = top_view("tuan")
+	list_top_view = list()
+	tuan_active = False
+	thang_active = False
+	moiluc_active = False
+	if request.method == 'POST':
+		if 'tuan_btn' in request.POST:
+			list_top_view = top_view("tuan")
+			tuan_active = True
+		elif 'thang_btn' in request.POST:
+			list_top_view = top_view("thang")
+			thang_active = True
+		elif 'moiluc_btn' in request.POST:
+			list_top_view = top_view("moiluc")
+			moiluc_active = True
+	else:
+		list_top_view = top_view("tuan")
+		tuan_active=True
 	cnt = 0
 	list_top_view_row1 = list()
 	list_top_view_row2 = list()
@@ -58,6 +89,9 @@ def home(request): # view trang home
 		'list_top_view_row1': list_top_view_row1,
 		'list_top_view_row2': list_top_view_row2,
 		'list_top_view_row3': list_top_view_row3,
+		'tuan_active': tuan_active,
+		'thang_active': thang_active,
+		'moiluc_active': moiluc_active,
 	}
 	return render(request, 'home.html', context)
 
