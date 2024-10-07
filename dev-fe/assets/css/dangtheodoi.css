@@ -314,7 +314,7 @@ body {
 }
 
 .truyentheodoi {
-  margin: 120px;
+  margin: 0 px;
 
   color: #4D535E;
 }
@@ -322,6 +322,12 @@ body {
 .truyentheodoi .truyen {
   margin-bottom: 70px;
 }
+.truyentheodoi .truyen img {
+  width: 160px;
+  height: 230px;
+  border-radius: 10px;
+}
+
 
 .truyentheodoi h3 {
   margin-bottom: 50px;
@@ -365,14 +371,10 @@ body {
 .image-container {
   position: relative;
   display: inline-block;
-  width: 170px;
+  width: 160px;
 }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
+
 
 .delete-icon {
   position: absolute;
@@ -430,7 +432,7 @@ body {
 /* FOOTER */
 main {
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .footer {
