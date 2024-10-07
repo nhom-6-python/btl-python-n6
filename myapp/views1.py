@@ -101,6 +101,32 @@ def home(request): # view trang home
 	}
 	return render(request, 'home.html', context)
 
+def doctruyen(request, id):
+	truyen = Truyen.objects.get(id=id)
+	nhomdich = Nguoidung.objects.get(truyendang=truyen)
+	sochuong = 0
+	allchuong = truyen.chap.all().order_by('stt')
+	for x in truyen.chap.all():
+		sochuong+=1
+	truyen_cung_nhom_dich = nhomdich.truyendang.all()[:3]
+	truyen_de_xuat = top_view('tuan')[:3]
+	context = {
+		"truyen" : truyen,
+		'nhomdich' : nhomdich,
+		'sochuong' : sochuong,
+		'allchuong' : allchuong,
+		'truyen_cung_nhom_dich': truyen_cung_nhom_dich,
+		'truyen_de_xuat' : truyen_de_xuat,
+	}
+	return render(request, 'doctruyen.html', context)
+
+
+
+
+
+
+
+
 # def upload(request):
 # 	if request.method == 'POST':
 # 		if 'upload-truyen' in request.POST:

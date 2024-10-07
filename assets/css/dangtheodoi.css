@@ -1,15 +1,18 @@
 /* NAV */
-.navbar-brand{
+.navbar-brand {
   color: black;
   font-size: 18px;
 }
-.navbar-toggler{
+
+.navbar-toggler {
   color: #0000007d;
 
 }
-.navbar-toggler i{
+
+.navbar-toggler i {
   font-size: 20px;
 }
+
 .dropdown-menu ul {
   list-style: none;
   padding: 0;
@@ -32,7 +35,8 @@
 .dropdown-menu.show {
   display: flex;
 }
-.form-control{
+
+.form-control {
   font-size: 0.7rem;
 }
 
@@ -47,6 +51,7 @@
   .dropdown:hover .dropdown-menu {
     display: flex;
   }
+
   .dropdown-menu.show {
     display: flex;
   }
@@ -68,6 +73,7 @@
   }
 
 }
+
 /* thong bao */
 
 /* end thong bao */
@@ -79,6 +85,7 @@
   height: 2rem;
   align-items: center;
 }
+
 .d-flex .inner-button {
   width: 30px;
   height: 30px;
@@ -113,6 +120,7 @@
   font-size: 10px;
 
 }
+
 /* END SEARCH */
 
 
@@ -300,118 +308,140 @@
 /* END CAROUSEL */
 
 
-   /*main*/
-body{
+/*main*/
+body {
   background-color: #D1D4DD;
-}  
-.truyentheodoi{
-  margin:120px;
-  
-  color:#4D535E;
 }
-.truyentheodoi .truyen{
+
+.truyentheodoi {
+  margin: 0 px;
+
+  color: #4D535E;
+}
+
+.truyentheodoi .truyen {
   margin-bottom: 70px;
 }
-.truyentheodoi h3{
+.truyentheodoi .truyen img {
+  width: 160px;
+  height: 230px;
+  border-radius: 10px;
+}
+
+
+.truyentheodoi h3 {
   margin-bottom: 50px;
 }
-.chuyentrang .col-6{
+
+.chuyentrang .col-6 {
   position: relative;
-  font-weight:500;
- 
+  font-weight: 500;
+
 }
-.trangtruoc{
+
+.trangtruoc {
   position: absolute;
   right: 0px;
 }
+
 .button {
-    display: inline-flex;
-    align-items: center;
-    padding: 5px 20px;
-    font-size: 20px;
-    font-weight:50px;
-    color: rgb(0, 0, 0);
-    background-color: #999a9d;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 50px;
+  color: rgb(0, 0, 0);
+  background-color: #999a9d;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .button i {
-    margin-right: 8px;
-    margin-left: 8px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
+
 .button:hover {
-  color:rgb(0, 0, 0);
-    background-color: #7d7e7f;
+  color: rgb(0, 0, 0);
+  background-color: #7d7e7f;
 }
 
 .image-container {
   position: relative;
   display: inline-block;
-  width: 170px;
+  width: 160px;
 }
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-} 
+
+
+
 .delete-icon {
   position: absolute;
   top: 3px;
   right: 3px;
-  
-  color:white;
+
+  color: white;
   border-radius: 50%;
-  
+
   font-size: 9px;
   padding: 6px;
   cursor: pointer;
 }
+
 .description {
   margin-top: 10px;
-  
-  color:rgb(50, 48, 48);
+
+  color: rgb(50, 48, 48);
   display: -webkit-box;
-  -webkit-line-clamp:2; /* Số dòng tối đa */
+  -webkit-line-clamp: 2;
+  /* Số dòng tối đa */
   -webkit-box-orient: vertical;
-  
+
   overflow: hidden;
   text-overflow: ellipsis;
-  
-  
+
+
   font-size: 16px;
   font-weight: 450;
-  
-  
+
+
 }
+
 .btndelete {
-  background-color: #bd2d23; /* Màu nền đỏ */
+  background-color: #bd2d23;
+  /* Màu nền đỏ */
   border-radius: 50%;
   border: 2px solid rgb(232, 227, 227);
-  color: white; /* Màu chữ trắng */
-  padding: 5px 7px; /* Khoảng cách bên trong */
+  color: white;
+  /* Màu chữ trắng */
+  padding: 5px 7px;
+  /* Khoảng cách bên trong */
   padding-top: 6px;
-  font-size: 9px; /* Kích thước chữ */
-  cursor: pointer; /* Con trỏ chuột khi hover */
+  font-size: 9px;
+  /* Kích thước chữ */
+  cursor: pointer;
+  /* Con trỏ chuột khi hover */
 }
 
 .btndelete:hover {
-  background-color: #d32f2f; /* Màu nền khi hover */
+  background-color: #d32f2f;
+  /* Màu nền khi hover */
 }
+
 /* FOOTER */
-main{
+main {
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
+
 .footer {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   padding-top: 4rem;
   padding-bottom: 4rem;
   border-top-width: 2px;
-  
+
 }
 
 .footer .inner-text {
