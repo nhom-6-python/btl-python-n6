@@ -304,7 +304,7 @@
 /*main*/
 .intro {
   margin-top: 45px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 main {
@@ -340,16 +340,19 @@ main {
   position: relative;
   background-color: #e5e7eb;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
+  min-height: 250px;
 
 }
 
-.intro .info h2 {
+
+.anhnen h2 {
   position: absolute;
-  top: -90px;
+  bottom: 10px;
   color: white;
   font-family: "Times New Roman", Times, serif;
-
+  z-index: 1;
+  left: 280px;
 }
 
 .thongtin h3 {
@@ -374,8 +377,9 @@ main {
 
 .thongtin {
   background-color: #EDEEF2;
-  margin-bottom: 0;
+  margin-bottom: -30px;
   padding: 5px;
+ 
 
 }
 
@@ -412,23 +416,28 @@ main {
 }
 
 
-.intro .info img {
+.anhnen img {
   position: absolute;
-  width: auto;
-  height: 320px;
-  top: -150px;
+  width: 220px;
+  height: 330px;
+  top:400px;
   left: 50px;
   border-radius: 10px;
+  z-index:1;
 }
 
 .intro .info .desc {
   padding-bottom: 30px;
   margin-left: 300px;
 }
+.intro .info .desc .detail{
+  min-height: 170px;
+  font-size: large;
+}
 
 .intro .info .desc button {
   background-color: blue;
-
+ 
   border: none;
   color: white;
   padding: 10px 20px;
@@ -441,9 +450,8 @@ main {
   border-radius: 5px;
   width: 160px;
   height: 40px;
-
+  
 }
-
 .intro .info .desc button:hover {
   background-color: rgb(21, 21, 175);
   border: none;
@@ -458,7 +466,7 @@ main {
   border-radius: 5px;
   width: 160px;
   height: 40px;
-
+  
 }
 
 .body {
@@ -477,30 +485,45 @@ main {
 
 }
 
-.image-container {
+.dexuat {
 
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0px;
   width: 100%;
+ 
+
 }
 
-.image-container img {
-  max-width: 100%;
-  height: 100px;
+.dexuat img {
+  width: 90px;
+  height: 110px;
   border-radius: 5px;
   transition: transform 0.2s;
 }
 
-.image-container img:hover {
+.dexuat img:hover {
   transform: scale(1.1);
 }
 
-.image-container figcaption {
-  margin-left: 20px;
-  color: black;
-  padding: 5px;
-  font-size: large;
+.dexuat .truyendexuat {
+  margin-left:0px;
+  color: rgb(0, 0, 0);
+  padding-bottom: 30px;
+  font-family:Arial, Helvetica, sans-serif;
+  display: flex;
+
+}
+.dexuat .truyendexuat .sochuong{
+  font-weight: bold;
+  color: #615f5f;
+}
+.dexuat .truyendexuat .noidung{
+  font-weight: bold;
+  color: #302f2f;
+}
+.dexuat .truyendexuat .detail{
+  margin-left: 15px;
 }
 
 .content .allchuong {
@@ -508,9 +531,12 @@ main {
   padding: 20px;
   height: 800px;
   overflow: auto;
-  margin-top: 0;
+  background-color: #EDEEF2;
+  
 }
-
+.content .user{
+  display: flex;
+}
 .allchuong .chuong .col-2 {
   display: flex;
   justify-content: center;
@@ -518,17 +544,17 @@ main {
   align-items: center;
   /* Căn giữa theo chiều dọc */
   white-space: nowrap;
-
+  
 }
 
 .allchuong .noidungchuong {
   padding-top: 15px;
   color: #2f2d2d;
   font-size: larger;
-}
+}  
 
 .allchuong .chuong {
-  background-color: #f9fafb;
+  background-color: #f8f8f8;
   padding: 0px;
   border-radius: 5px;
   margin: 10px;
@@ -562,6 +588,7 @@ main {
   background-color: #e5e7eb;
   padding: 10px;
   margin-left: 0;
+  
 }
 
 .circular-btn {
@@ -587,6 +614,7 @@ main {
   padding-bottom: 4rem;
   border-top-width: 2px;
   margin-bottom: -100px;
+
 }
 
 .footer .inner-text {
