@@ -1,63 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WEB TRUYỆN SIU CẤP V.I.P</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
-  <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="assets/js/javascrip.js"></script>
-  <meta name="theme-color" content="#7952b3">
-
-
-  <!-- css -->
-  <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/suatruyen.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-  <link href="assets/css/style.scss" rel="stylesheet/scss" type="text/css">
-
-
-  <!-- font -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-
-  <!-- Custom styles for this template -->
-
-
-
-</head>
+{% extends "index.html" %}
+{% block content %}
+{% load humanize %}
 
 <body>
-  <!-- NAVBAR -->
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container">
@@ -159,78 +104,148 @@
       </div>
     </nav>
   </header>
-  <!-- END NAVBAR -->
+
+
 
 
   <main>
-    <div class="trencung">
-      <div class="container">
-        <a class="chevron-left" href="#"><i class="fas fa-chevron-left"></i></a>
-        <div class="left">
-          <p>Thêm Thông Tin Truyện</p>
-          <h5>Truyện Chưa Có Tiêu Đề</h5>
-        </div>
 
-        <div class="right">
-          <a href="#" class="buttonhuy">Hủy</a>
+    <div class="intro">
+      <div class="container">
+        <div class="anhnen" style="background-image: url('{{truyen.anhnen.url}}');">
+          <div class="row">
+            <div class="col-12">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="info">
+          <img src="{{truyen.anhbia.url}}" alt="anh1">
+          <div class="desc">
+            <h2>
+              <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
+              <br>
+              {{ truyen.ten }}
+            </h2>
+            <button href="#" type="button" class="btn btn-primary">Thêm vào yêu thích</button>
+            <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
+            <button href="#" type="button" class="btn btn-primary">Đọc chương mới nhất</button>
+            <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="chinhsua">
+
+
+    <div class="content">
       <div class="container">
         <div class="row">
-          <div class="col-lg-5 col-md-12 col-sm-12 col-12">
-            <div class="backgranh">
-              <div class="anh">
-                <a href="#">
-                  <i class="fa-regular fa-image"></i>
-                  <br>
-                  <p> Thêm trang bìa</p>
-                </a>
+          <div class="col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="thongtin">
+              <div class="row">
+                <div class="col-xs-1">
+                  <a href="#">
+                    <div class="circle-icon">
+                      ND
+                    </div>
+                  </a>
+                </div>
+                <div class="col-xs-11">
+                  <h6>{{nhomdich.ten}}</h6>
+                  <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
+                </div>
+
               </div>
-
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>{{truyen.mota}} </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 ">
+                  <div class="trangchinhthuc">
+                    <h6>THÔNG TIN THÊM</h6>
+                    <p><span class="bold">{{sochuong}}</span> chương đã đăng</p>
+                    <p><span class="bold">{{truyen.luotxem|intcomma}}</span> lượt xem</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
+            <br>
+            <div class="allchuong">
+              {% for x in allchuong %}
+              <a href="#">
+                <div class="chuong">
+                  <div class="row">
+                    <div class="col-2">
+
+                      <h4 class="tenchuong">Chương {{x.stt}}</h4>
+                    </div>
+                    <div class="col-9">
+                      <p class="noidungchuong">{{x.ten}}</p>
+                      <p>{{x.thoigiandang|naturaltime}}</p>
+                    </div>
+                    <div class="col-1">
+                      <button class="circular-btn">
+                        <i class="fa fa-download"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-            <h5>Chi Tiết Truyện</h5>
-            <div class="content">
-              <h6>Tiêu đề</h6>
-              <input type="text" name="tieude" placeholder="Truyện chưa có tiêu đề">
-              <h6>Mô tả</h6>
-              <textarea id="paragraph" name="paragraph" class="paragraph-input"></textarea>
-              <h6>Tác giả</h6>
-              <input class="tacgia" type="text" name="tieude" placeholder="Name">
-              <h6>Thể loại</h6>
-              <select id="cars" name="cars">
-                <option value="" selected disabled hidden>Chọn một thể loại</option>
-                <option value="Van ngao">Van ngao</option>
-                <option value="Ngao Van">Ngao Van</option>
-                <option value="Messi">Messi</option>
-                <option value="Ronaldo">Ronaldo</option>
-              </select>
-              <h6>File truyện</h6>
-              <select id="cars" name="cars">
-                <option value="" selected disabled hidden>Chọn một thể loại</option>
-                <option value="Van ngao">Van ngao</option>
-                <option value="Ngao Van">Ngao Van</option>
-                <option value="Messi">Messi</option>
-                <option value="Ronaldo">Ronaldo</option>
-              </select>
+
+
+
+
+          <div class="col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="dexuat">
+              <div class="row">
+                <div class="col-12">
+                  <h6>CÙNG NHÓM DỊCH</h6>
+                  {% for x in truyen_cung_nhom_dich %}
+                  <a href="#">
+                    <figure class="image-container">
+                      <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
+                      <figcaption>
+                        {{x.ten}}
+                      </figcaption>
+                    </figure>
+                  </a>
+                  {% endfor %}
+                  <h6>ĐỀ XUẤT</h6>
+                  {% for x in truyen_de_xuat %}
+                  <a href="#">
+                    <figure class="image-container">
+                      <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
+                      <figcaption>
+                        {{x.ten}}
+                      </figcaption>
+                    </figure>
+                  </a>
+                  {% endfor %}
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
-  </main>
 
+
+  </main>
   <!-- FOOTER -->
   <footer class="footer">
     <!-- <p class="float-end"><a href="#">Back to top</a></p> -->
     <div class="container">
       <div class="inner-text">
         <div class="inner-contact">Link Github của nhóm 6:
-          <a href="https://github.com/nhom-6-python/btl-python-n6.git" target="_blank"> GitHub <i class="fa-brands fa-github"></i></a>
+          <a href="github.com" target="_blank">github.com</a>
         </div>
         <div class="inner-contact">
           Thành viên nhóm:
@@ -247,7 +262,11 @@
   <!-- END FOOTER -->
 
 
+  <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
 </body>
 
->>>>>>> dev-fe
-</html>
+{% endblock %}

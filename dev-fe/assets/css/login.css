@@ -95,6 +95,7 @@
 .signup label:hover {
   text-decoration: underline;
 }
+
 select {
   height: 60px;
   width: 100%;

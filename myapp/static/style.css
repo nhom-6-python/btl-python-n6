@@ -1,4 +1,3 @@
-
 /* thong bao */
 
 /* end thong bao */
@@ -10,6 +9,7 @@
   align-items: center;
   margin: 0;
 }
+
 .d-flex .inner-button {
   width: 30px;
   height: 30px;
@@ -44,6 +44,7 @@
   font-size: 10px;
 
 }
+
 /* END SEARCH */
 
 
@@ -277,6 +278,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 #new-update .inner-name .inner-chap {
   margin: 0;
   font-size: 0.8rem;
