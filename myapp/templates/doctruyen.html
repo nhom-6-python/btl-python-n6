@@ -104,9 +104,7 @@
       </div>
     </nav>
   </header>
-
-
-
+  <!-- END NAVBAR -->
 
   <main>
 
@@ -115,23 +113,27 @@
         <div class="anhnen" style="background-image: url('{{truyen.anhnen.url}}');">
           <div class="row">
             <div class="col-12">
+              <img src="{{truyen.anhbia.url}}" alt="anh1">
+              <h2>
+                <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
+                <br>
+                {{ truyen.ten }}
+              </h2>
             </div>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="info">
-          <img src="{{truyen.anhbia.url}}" alt="anh1">
           <div class="desc">
-            <h2>
-              <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
-              <br>
-              {{ truyen.ten }}
-            </h2>
-            <button href="#" type="button" class="btn btn-primary">Thêm vào yêu thích</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc chương mới nhất</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+            <div class="btn">
+              <button href="#" type="button" class="btn btn-primary">Thêm vào yêu
+                thích</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc chương mới
+                nhất</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+            </div>
           </div>
         </div>
       </div>
@@ -144,18 +146,17 @@
           <div class="col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="thongtin">
               <div class="row">
-                <div class="col-xs-1">
-                  <a href="#">
+                <div>
+                  <a class="user" href="#">
                     <div class="circle-icon">
                       ND
                     </div>
+                    <div>
+                      <h6>{{nhomdich.ten}}</h6>
+                      <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
+                    </div>
                   </a>
                 </div>
-                <div class="col-xs-11">
-                  <h6>{{nhomdich.ten}}</h6>
-                  <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
-                </div>
-
               </div>
               <div class="row">
                 <div class="col-xs-12">
@@ -205,33 +206,46 @@
           <div class="col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="dexuat">
               <div class="row">
-                <div class="col-12">
+                <div>
                   <h6>CÙNG NHÓM DỊCH</h6>
                   {% for x in truyen_cung_nhom_dich %}
                   <a href="#">
-                    <figure class="image-container">
+                    <div class="truyendexuat">
                       <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                      <figcaption>
-                        {{x.ten}}
-                      </figcaption>
-                    </figure>
+                      <div class="detail">
+                        <div class="noidung" style="color:red">
+                          {{x.ten}}
+                        </div>
+                        <div>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
+                        </div>
+                      </div>
+
+                    </div>
                   </a>
                   {% endfor %}
                   <h6>ĐỀ XUẤT</h6>
                   {% for x in truyen_de_xuat %}
                   <a href="#">
-                    <figure class="image-container">
+                    <div class="truyendexuat">
                       <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                      <figcaption>
-                        {{x.ten}}
-                      </figcaption>
-                    </figure>
+                      <div class="detail">
+                        <div class="noidung" style="color:red;">
+                          {{x.ten}}
+                        </div>
+                        <div>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
+                        </div>
+                      </div>
+
+                    </div>
                   </a>
                   {% endfor %}
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

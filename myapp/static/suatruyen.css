@@ -130,7 +130,6 @@
   font-size: 0.8rem;
 }
 
-
 .c-item {
   height: 330px;
   position: relative;
@@ -147,7 +146,6 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(0.8);
-
 }
 
 .btn-primary {
@@ -196,7 +194,6 @@
   color: rgba(255, 255, 255, .55);
 }
 
-
 .btn-outline-success {
   color: #000000;
   border-color: #000000;
@@ -209,7 +206,6 @@
 .btn-outline-success i {
   text-align: center;
 }
-
 
 .btn-outline-success:hover {
   background: #eeeeee;
@@ -230,8 +226,6 @@
 .navbar-dark .navbar-nav a.nav-link:hover {
   color: var(--color-text);
 }
-
-
 
 .image-set {
   background: linear-gradient(0deg, #000000e6, rgba(0, 0, 0, .863) 5.79%, rgba(0, 0, 0, .802) 10.88%, rgba(0, 0, 0, .721) 15.63%, rgba(0, 0, 0, .627) 20.37%, rgba(0, 0, 0, .523) 25.46%, rgba(0, 0, 0, .416) 31.25%, rgba(0, 0, 0, .311) 38.08%, rgba(0, 0, 0, .213) 46.3%, rgba(0, 0, 0, .128) 56.25%, #0000000f 68.29%, rgba(0, 0, 0, .016) 82.75%, #0000);
@@ -617,6 +611,10 @@
 
 
 /* FOOTER */
+main {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
 
 .footer {
   --tw-bg-opacity: 1;

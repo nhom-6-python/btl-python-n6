@@ -86,12 +86,6 @@ def home(request): # view trang home
 	list_top_view_thang = top_view('thang')
 	list_top_view_moiluc = top_view('moiluc')
 	list_top_nhomdich_tuan = top_nhomdich('tuan')
-	for x in list_top_view_tuan:
-		print(x.total_views)
-	for x in list_top_view_thang:
-		print(x.total_views)
-	for x in list_top_view_moiluc:
-		print(x.total_views)
 	list_top_nhomdich_thang = top_nhomdich('thang')
 	list_top_nhomdich_moiluc = top_nhomdich('moiluc')
 	context = {
