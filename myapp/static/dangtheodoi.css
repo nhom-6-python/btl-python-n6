@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* NAV */
 .navbar-brand {
   color: black;
@@ -75,6 +76,8 @@
 
 }
 
+=======
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 /* thong bao */
 
 /* end thong bao */
@@ -315,7 +318,11 @@ body {
 }
 
 .truyentheodoi {
+<<<<<<< HEAD
   margin: 0 px;
+=======
+  margin: 120px;
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 
   color: #4D535E;
 }
@@ -323,12 +330,15 @@ body {
 .truyentheodoi .truyen {
   margin-bottom: 70px;
 }
+<<<<<<< HEAD
 .truyentheodoi .truyen img {
   width: 160px;
   height: 230px;
   border-radius: 10px;
 }
 
+=======
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 
 .truyentheodoi h3 {
   margin-bottom: 50px;
@@ -375,7 +385,15 @@ body {
   width: 160px;
 }
 
+<<<<<<< HEAD
 
+=======
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 
 .delete-icon {
   position: absolute;
@@ -466,6 +484,7 @@ main {
   color: white;
 }
 
+<<<<<<< HEAD
 =======
 /* NAV */
 .navbar-brand {
@@ -933,4 +952,6 @@ main {
 }
 
 >>>>>>> dev
+=======
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 /* END FOOTER */

@@ -6,6 +6,13 @@
 }
 
 .container-2 {
+<<<<<<< HEAD
+=======
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%,-50%); */
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
   margin-left: auto;
   margin-right: auto;
   max-width: 430px;
@@ -15,6 +22,7 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
+<<<<<<< HEAD
 .container-2 .login {
   display: none;
 }
@@ -24,6 +32,17 @@
 }
 
 #check:checked~.registration {
+=======
+.container-2 .registration {
+  display: none;
+}
+
+#check:checked~.registration {
+  display: block;
+}
+
+#check:checked~.login {
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
   display: none;
 }
 
@@ -94,6 +113,7 @@
 
 .signup label:hover {
   text-decoration: underline;
+<<<<<<< HEAD
 }
 
 select {
@@ -106,4 +126,6 @@ select {
   border-radius: 6px;
   outline: none;
   color: #757575;
+=======
+>>>>>>> b9026d491d3639c06a1a046b1e3888fe079df0e0
 }
