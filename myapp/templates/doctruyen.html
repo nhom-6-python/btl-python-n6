@@ -6,7 +6,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Trang chủ</a>
+        <a class="navbar-brand" href="/home/">Trang chủ</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars"></i>
@@ -127,102 +127,30 @@
         <div class="info">
           <div class="desc">
             <div class="thoigian">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
+                viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
               </svg>
               <span> 22 phút trước</span>
             </div>
             <div class="cactheloai">
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">mangalkFGI</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="theloai">
-                    <span style="font-weight: bold;">manga</span>
-                    <span class="number">803</span>
-                  </div>
-                </a>
-                
-                
+              {% for x in list_the_loai %}
+              <a href="#">
+                <div class="theloai">
+                  <span style="font-weight: bold;">{{x}}</span>
+                </div>
+              </a>
+              {% endfor %}
             </div>
 
-            <div class="btn">
-              <button href="#" type="button" class="btn btn-primary">Thêm vào yêu
-                thích</button>
-              <button href="#" type="button" class="btn btn-primary">Đọc chương mới
-                nhất</button>
-              <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
-              <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+            <div class="btn" style="text-align: unset;">
+              <a href="#" class="btn btn-primary">Thêm vào yêu
+                thích</a>
+              <a href="#" class="btn btn-primary">Đọc chương mới
+                nhất</a>
+              <a href="#" class="btn btn-primary">Đọc từ đầu</a>
+              <a href="#" class="btn btn-primary">Đọc tiếp</a>
             </div>
           </div>
         </div>
