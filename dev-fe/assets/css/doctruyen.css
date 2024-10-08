@@ -432,6 +432,7 @@ main {
 }
 .intro .info .desc .detail{
   min-height: 170px;
+  font-size: large;
 }
 
 .intro .info .desc button {

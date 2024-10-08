@@ -4,7 +4,8 @@ from .forms import TruyenForm
 from datetime import datetime, timedelta
 from django.utils.timezone import make_aware
 from django.utils import timezone
-from django.db.models import Sum,Q
+from django.db.models import Sum,Q, Value
+from django.db.models.functions import Coalesce
 # Create your views here.
 
 # chức năng trang home
@@ -29,7 +30,7 @@ def top_view(time): # lọc ra truyện nhiều view nhất trong tuần/tháng/
 		end_of_week = start_of_week + timedelta(days=6)
 		top_view = (
 			Truyen.objects
-			.annotate(total_views=Sum('chap__luotxem', filter=Q(chap__thoigiandang__gte=start_of_week) & Q(chap__thoigiandang__lte=end_of_week)))
+			.annotate(total_views=Coalesce(Sum('chap__luotxem', filter=Q(chap__thoigiandang__gte=start_of_week) & Q(chap__thoigiandang__lte=end_of_week)),Value(0)))
 			.order_by('-total_views')[:10]  # Lấy 9 truyện có lượt xem cao nhất trong tuần
 		)
 		return top_view
@@ -37,14 +38,14 @@ def top_view(time): # lọc ra truyện nhiều view nhất trong tuần/tháng/
 		this_month = datetime.today().month
 		top_view = (
 			Truyen.objects
-			.annotate(total_views=Sum('chap__luotxem', filter=Q(chap__thoigiandang__month=this_month)))
+			.annotate(total_views=Coalesce(Sum('chap__luotxem', filter=Q(chap__thoigiandang__month=this_month)),Value(0)))
 			.order_by('-total_views')[:10] # Lấy 9 truyện có lượt xem cao nhất trong tháng
 		)
 		return top_view
 	elif time == 'moiluc':
 		top_view = (
 			Truyen.objects
-			.annotate(total_views=Sum('chap__luotxem'))
+			.annotate(total_views=Coalesce(Sum('chap__luotxem'),Value(0)))
 			.order_by('-total_views')[:10]
 		)
 		return top_view
@@ -56,7 +57,7 @@ def top_nhomdich(time):
 		end_of_week = start_of_week + timedelta(days=6)
 		top_nhomdich = (
 			Nguoidung.objects.filter(vaitro='nhomdich')
-			.annotate(total_views=Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__gte=start_of_week) & Q(truyendang__chap__thoigiandang__lte=end_of_week)))
+			.annotate(total_views=Coalesce(Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__gte=start_of_week) & Q(truyendang__chap__thoigiandang__lte=end_of_week)),Value(0)))
 			.order_by('-total_views')[:5]  # Lấy 5 người dùng có lượt xem cao nhất
 		)
 		return top_nhomdich
@@ -64,14 +65,14 @@ def top_nhomdich(time):
 		this_month = datetime.today().month
 		top_nhomdich = (
 			Nguoidung.objects.filter(vaitro='nhomdich')
-			.annotate(total_views=Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__month=this_month)))
+			.annotate(total_views=Coalesce(Sum('truyendang__chap__luotxem', filter=Q(truyendang__chap__thoigiandang__month=this_month)),Value(0)))
 			.order_by('-total_views')[:5] # Lấy 9 truyện có lượt xem cao nhất trong tháng
 		)
 		return top_nhomdich
 	elif time == 'moiluc':
 		top_nhomdich = (
 			Nguoidung.objects.filter(vaitro='nhomdich')
-			.annotate(total_views=Sum('truyendang__chap__luotxem'))
+			.annotate(total_views=Coalesce(Sum('truyendang__chap__luotxem'),Value(0)))
 			.order_by('-total_views')[:5]
 		)
 		return top_nhomdich

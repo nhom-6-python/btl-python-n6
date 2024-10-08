@@ -24,24 +24,69 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <ul>
-                  <li><a class="dropdown-item" href="#">Truong lol</a></li>
-                  <li><a class="dropdown-item" href="#">Truong ngao</a></li>
-                  <li><a class="dropdown-item" href="#">Truong an cut</a></li>
-                  <li><a class="dropdown-item" href="#">Truong lmao</a></li>
-                  <li><a class="dropdown-item" href="#">Ngao da</a></li>
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Detective </a></li>
+                  <li><a class="dropdown-item" href="#">Huyền Huyễn</a></li>
+                  <li><a class="dropdown-item" href="#">Military</a></li>
+                  <li><a class="dropdown-item" href="#">Seinen</a></li>
+                  <li><a class="dropdown-item" href="#">Tragedy</a></li>
+
                 </ul>
                 <ul>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
+                  <li><a class="dropdown-item" href="#">Adventure</a></li>
+                  <li><a class="dropdown-item" href="#">Doujinshi</a></li>
+                  <li><a class="dropdown-item" href="#">Isekai</a></li>
+                  <li><a class="dropdown-item" href="#">Mistery</a></li>
+                  <li><a class="dropdown-item" href="#">Shoujo</a></li>
+                  <li><a class="dropdown-item" href="#">Trọng sinh</a></li>
+
                 </ul>
                 <ul>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
-                  <li><a class="dropdown-item" href="#">Mega Menu Link</a></li>
+                  <li><a class="dropdown-item" href="#">Anime</a></li>
+                  <li><a class="dropdown-item" href="#">Drama</a></li>
+                  <li><a class="dropdown-item" href="#">Josei</a></li>
+                  <li><a class="dropdown-item" href="#">Ngôn tình</a></li>
+                  <li><a class="dropdown-item" href="#">Shoujo Ai</a></li>
+                  <li><a class="dropdown-item" href="#">Truyện màu</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Chuyển sinh</a></li>
+                  <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                  <li><a class="dropdown-item" href="#">Mafia</a></li>
+                  <li><a class="dropdown-item" href="#">One shot</a></li>
+                  <li><a class="dropdown-item" href="#">Shounen</a></li>
+                  <li><a class="dropdown-item" href="#">Webtoon</a></li>
+
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Cổ đại</a></li>
+                  <li><a class="dropdown-item" href="#">Gender Bender</a></li>
+                  <li><a class="dropdown-item" href="#">Magic</a></li>
+                  <li><a class="dropdown-item" href="#">Psychological</a></li>
+                  <li><a class="dropdown-item" href="#">Shounen Ai</a></li>
+                  <li><a class="dropdown-item" href="#">Xuyên không</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Comedy</a></li>
+                  <li><a class="dropdown-item" href="#">Harem</a></li>
+                  <li><a class="dropdown-item" href="#">Manhua</a></li>
+                  <li><a class="dropdown-item" href="#">Romance</a></li>
+                  <li><a class="dropdown-item" href="#">Slice of life</a></li>
+
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Comic</a></li>
+                  <li><a class="dropdown-item" href="#">Historical</a></li>
+                  <li><a class="dropdown-item" href="#">Manhwa</a></li>
+                  <li><a class="dropdown-item" href="#">School Life</a></li>
+                  <li><a class="dropdown-item" href="#">Sports</a></li>
+                </ul>
+                <ul>
+                  <li><a class="dropdown-item" href="#">Demons</a></li>
+                  <li><a class="dropdown-item" href="#">Horror</a></li>
+                  <li><a class="dropdown-item" href="#">Martial Arts</a></li>
+                  <li><a class="dropdown-item" href="#">Sci-fi</a></li>
+                  <li><a class="dropdown-item" href="#">Supernatural</a></li>
                 </ul>
               </div>
             </li>
@@ -59,9 +104,7 @@
       </div>
     </nav>
   </header>
-
-
-
+  <!-- END NAVBAR -->
 
   <main>
 
@@ -70,23 +113,117 @@
         <div class="anhnen" style="background-image: url('{{truyen.anhnen.url}}');">
           <div class="row">
             <div class="col-12">
+              <img src="{{truyen.anhbia.url}}" alt="anh1">
+              <h2>
+                <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
+                <br>
+                {{ truyen.ten }}
+              </h2>
             </div>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="info">
-          <img src="{{truyen.anhbia.url}}" alt="anh1">
           <div class="desc">
-            <h2>
-              <span style="font-size: medium; opacity:0.6;">{{ truyen.tacgia }}</span>
-              <br>
-              {{ truyen.ten }}
-            </h2>
-            <button href="#" type="button" class="btn btn-primary">Thêm vào yêu thích</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc chương mới nhất</button>
-            <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+            <div class="thoigian">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+              </svg>
+              <span> 22 phút trước</span>
+            </div>
+            <div class="cactheloai">
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">mangalkFGI</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                <a href="#">
+                  <div class="theloai">
+                    <span style="font-weight: bold;">manga</span>
+                    <span class="number">803</span>
+                  </div>
+                </a>
+                
+                
+            </div>
+
+            <div class="btn">
+              <button href="#" type="button" class="btn btn-primary">Thêm vào yêu
+                thích</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc chương mới
+                nhất</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc từ đầu</button>
+              <button href="#" type="button" class="btn btn-primary">Đọc tiếp</button>
+            </div>
           </div>
         </div>
       </div>
@@ -99,18 +236,17 @@
           <div class="col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="thongtin">
               <div class="row">
-                <div class="col-xs-1">
-                  <a href="#">
+                <div>
+                  <a class="user" href="#">
                     <div class="circle-icon">
                       ND
                     </div>
+                    <div>
+                      <h6>{{nhomdich.ten}}</h6>
+                      <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
+                    </div>
                   </a>
                 </div>
-                <div class="col-xs-11">
-                  <h6>{{nhomdich.ten}}</h6>
-                  <p>{{nhomdich.sotruyendadang}} truyện đã đăng</p>
-                </div>
-
               </div>
               <div class="row">
                 <div class="col-xs-12">
@@ -160,33 +296,46 @@
           <div class="col-lg-3 col-md-12 col-sm-12 col-12">
             <div class="dexuat">
               <div class="row">
-                <div class="col-12">
+                <div>
                   <h6>CÙNG NHÓM DỊCH</h6>
                   {% for x in truyen_cung_nhom_dich %}
                   <a href="#">
-                    <figure class="image-container">
+                    <div class="truyendexuat">
                       <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                      <figcaption>
-                        {{x.ten}}
-                      </figcaption>
-                    </figure>
+                      <div class="detail">
+                        <div class="noidung" style="color:red">
+                          {{x.ten}}
+                        </div>
+                        <div>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
+                        </div>
+                      </div>
+
+                    </div>
                   </a>
                   {% endfor %}
                   <h6>ĐỀ XUẤT</h6>
                   {% for x in truyen_de_xuat %}
                   <a href="#">
-                    <figure class="image-container">
+                    <div class="truyendexuat">
                       <img src="{{x.anhbia.url}}" alt="{{x.ten}}">
-                      <figcaption>
-                        {{x.ten}}
-                      </figcaption>
-                    </figure>
+                      <div class="detail">
+                        <div class="noidung" style="color:red;">
+                          {{x.ten}}
+                        </div>
+                        <div>
+                          <span class="sochuong">C.{{x.chapmoinhat.stt}}</span>
+                          <span>{{x.chapmoinhat.thoigiandang|naturaltime}}</span>
+                        </div>
+                      </div>
+
+                    </div>
                   </a>
                   {% endfor %}
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
